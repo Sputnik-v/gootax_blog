@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    background: #e5e7ea;
+    height: 100vh;
+    margin: 0;
+
+    display: grid;
+
+    /* задаём высоту строк */
+    grid-template-rows: auto 1fr auto;
+}
+
+.active-menu {
+    display: block;
+}
