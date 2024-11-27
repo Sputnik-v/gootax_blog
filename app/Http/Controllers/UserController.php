@@ -41,6 +41,8 @@ class UserController extends Controller
 
     public function all()
     {
-        return view('admin.pages.all-users');
+        $users = User::all()->toArray();
+
+        return view('admin.pages.all-users', compact('users'));
     }
 }
