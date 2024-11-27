@@ -25,6 +25,7 @@
     <meta property="twitter:image:src" content="https://justboil.me/images/one-tailwind/repository-preview-hi-res.png">
     <meta property="twitter:image:width" content="1920">
     <meta property="twitter:image:height" content="960">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
 
     @vite('resources/admin/css/main.css')
 
@@ -165,9 +166,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="login.html">
+                    <a class="{{\Illuminate\Support\Facades\Route::is('all-users.all') ? 'bg-gray-600' : null}}" href="{{route('all-users.all')}}">
                         <span class="icon"><i class="mdi mdi-lock"></i></span>
-                        <span class="menu-item-label">Login</span>
+                        <span class="menu-item-label">All Users</span>
                     </a>
                 </li>
                 <li>
@@ -311,6 +312,7 @@
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 
 <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
 <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">

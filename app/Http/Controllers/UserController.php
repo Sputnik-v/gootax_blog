@@ -38,4 +38,9 @@ class UserController extends Controller
 
         return redirect()->route('add-user.index' );
     }
+
+    public function all()
+    {
+        return view('admin.pages.all-users');
+    }
 }

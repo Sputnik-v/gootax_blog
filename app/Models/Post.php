@@ -12,7 +12,9 @@ class Post extends Model
     protected $fillable = [
         'title',
         'description',
-        'image'
+        'image',
+        'user_id',
+        'category_id'
     ];
 
     public function comments(): HasMany
