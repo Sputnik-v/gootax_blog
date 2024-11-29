@@ -219,10 +219,10 @@
                     <div class="flex items-center justify-between">
                         <div class="widget-label">
                             <h3>
-                                Clients
+                                Users
                             </h3>
                             <h1>
-                                512
+                                {{$UserCount}}
                             </h1>
                         </div>
                         <span class="icon widget-icon text-green-500"><i class="mdi mdi-account-multiple mdi-48px"></i></span>
@@ -234,10 +234,10 @@
                     <div class="flex items-center justify-between">
                         <div class="widget-label">
                             <h3>
-                                Sales
+                                Posts
                             </h3>
                             <h1>
-                                $7,770
+                                {{$PostCount}}
                             </h1>
                         </div>
                         <span class="icon widget-icon text-blue-500"><i class="mdi mdi-cart-outline mdi-48px"></i></span>
@@ -250,10 +250,10 @@
                     <div class="flex items-center justify-between">
                         <div class="widget-label">
                             <h3>
-                                Performance
+                                Comments
                             </h3>
                             <h1>
-                                256%
+                                {{$CommentCount}}
                             </h1>
                         </div>
                         <span class="icon widget-icon text-red-500"><i class="mdi mdi-finance mdi-48px"></i></span>

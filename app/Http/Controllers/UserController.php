@@ -45,4 +45,17 @@ class UserController extends Controller
 
         return view('admin.pages.all-users', compact('users'));
     }
+
+    public function update($id)
+    {
+        $user = User::query()->find($id)->toArray();
+
+        return view('admin.pages.update', compact('user'));
+    }
+
+    public function updateUser($id)
+    {
+        dd($id);
+    }
+
 }
