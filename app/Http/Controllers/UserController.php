@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 use function Laravel\Prompts\password;
 
 class UserController extends Controller
@@ -53,9 +55,34 @@ class UserController extends Controller
         return view('admin.pages.update', compact('user'));
     }
 
-    public function updateUser($id)
+    public function updateUser($id, Request $request)
     {
-        dd($id);
+        $validated = $request->validate([
+            'name' => ['required', 'min:3', 'max:100'],
+            'email' => ['required', Rule::unique('users')->ignore($id), 'email'],
+            'image' => ['image', 'nullable', 'max:2999'],
+        ]);
+
+        $pathAvatar = null;
+
+        if( $request->hasFile('image')){
+            $pathDataBaseAvatar = User::query()->find($id)->toArray()['image'];
+            Storage::delete($pathDataBaseAvatar);
+
+            $pathAvatar = $request->file('image')->store('avatars');
+        }
+
+        $user = User::query()->find($id);
+
+        $user->name = $validated['name'];
+        $user->email = $validated['email'];
+        if ($pathAvatar) $user->image = $pathAvatar;
+        $user->save();
+
+        session()->flash('message', 'User ' . $user['name'] . ' update');
+
+        return redirect()->route('all-users.all' );
+
     }
 
 }

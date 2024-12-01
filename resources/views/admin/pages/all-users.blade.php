@@ -5,6 +5,14 @@
 @section('content')
 
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 my-2">
+
+
+        @if (session()->has('message'))
+            <div class="bg-green-200 rounded text-center py-2">
+                {{ session('message') }}
+            </div>
+        @endif
+
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
             <th scope="col" class="px-6 py-3">
