@@ -168,24 +168,19 @@
                 <li>
                     <a class="{{\Illuminate\Support\Facades\Route::is('all-users.all') ? 'bg-gray-600' : null}}" href="{{route('all-users.all')}}">
                         <span class="icon"><i class="mdi mdi-lock"></i></span>
-                        <span class="menu-item-label">All Users</span>
+                        <span class="menu-item-label">Users</span>
                     </a>
                 </li>
                 <li>
                     <a class="dropdown">
                         <span class="icon"><i class="mdi mdi-view-list"></i></span>
-                        <span class="menu-item-label">Submenus</span>
+                        <span class="menu-item-label">Posts</span>
                         <span class="icon"><i class="mdi mdi-plus"></i></span>
                     </a>
                     <ul>
                         <li>
-                            <a href="#void">
-                                <span>Sub-item One</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#void">
-                                <span>Sub-item Two</span>
+                            <a href="{{route('all-posts.all')}}">
+                                <span>All Posts</span>
                             </a>
                         </li>
                     </ul>

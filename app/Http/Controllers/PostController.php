@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -43,5 +44,19 @@ class PostController extends Controller
         session()->flash('message', 'Post  add');
 
         return redirect()->route('add-post.index' );
+    }
+
+    public function all()
+    {
+        $posts = Post::all();
+
+        return view('admin.pages.all-posts', compact('posts'));
+    }
+
+    public function update($id)
+    {
+        $post = Post::query()->find($id);
+
+        return view('admin.pages.update-post', compact('post'));
     }
 }
