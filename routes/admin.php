@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -13,10 +14,14 @@ Route::prefix('admin')->group(function () {
     Route::post('add-post', [PostController::class, 'store'])->name('add-post.store');
     Route::get('all-posts', [PostController::class, 'all'])->name('all-posts.all');
     Route::get('update-post/{id}', [PostController::class, 'update'])->name('update-post.update');
+    Route::post('update-post/{id}', [PostController::class, 'updatePost'])->name('update-post.update');
 
     Route::get('add-user', [UserController::class, 'index'])->name('add-user.index');
     Route::post('add-user', [UserController::class, 'store'])->name('add-user.store');
     Route::get('all-users', [UserController::class, 'all'])->name('all-users.all');
     Route::get('update-user/{id}', [UserController::class, 'update'])->name('update-user.update');
     Route::post('update-user/{id}', [UserController::class, 'updateUser'])->name('update-user.update');
+
+    Route::get('all-comments', [CommentController::class, 'all'])->name('all-comments.all');
+    Route::post('comments-delete/{id}', [CommentController::class, 'delete'])->name('comments-delete.delete');
 });

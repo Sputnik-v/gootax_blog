@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -48,7 +49,7 @@ class PostController extends Controller
 
     public function all()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(7);
 
         return view('admin.pages.all-posts', compact('posts'));
     }
@@ -58,5 +59,36 @@ class PostController extends Controller
         $post = Post::query()->find($id);
 
         return view('admin.pages.update-post', compact('post'));
+    }
+
+    public function updatePost($id, Request $request)
+    {
+        $validated = $request->validate([
+            'title' => ['required', 'min:5', 'max:100'],
+            'description' => ['required', 'min:5', 'max:300'],
+            'image' => ['image', 'nullable', 'max:2999'],
+        ]);
+
+        $pathAvatar = null;
+
+        if( $request->hasFile('image')){
+            $pathDataBaseImages = Post::query()->find($id)->toArray()['image'];
+
+            Storage::delete($pathDataBaseImages);
+
+            $pathAvatar = $request->file('image')->store('images');
+        }
+
+        $post = Post::query()->find($id);
+
+        $post->title = $validated['title'];
+        $post->description = $validated['description'];
+        if ($pathAvatar) $post->image = $pathAvatar;
+        $post->save();
+
+        session()->flash('message', 'Post with Id: ' . $post['id'] . ' - update');
+
+        return redirect()->route('all-posts.all' );
+
     }
 }

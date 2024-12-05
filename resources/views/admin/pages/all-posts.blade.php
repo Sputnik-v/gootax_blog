@@ -58,6 +58,10 @@
         @endforeach
 
         </tbody>
+
+            <div class="px-4">
+                {{$posts->links()}}
+            </div>
     </table>
 
 @endsection

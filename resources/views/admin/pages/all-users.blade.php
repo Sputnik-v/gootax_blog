@@ -35,10 +35,10 @@
 
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                    <img class="w-10 h-10 rounded-full" src="{{ asset('storage/' . $user['image']) }}" alt="image">
+                    <img class="w-10 h-10 rounded-full" src="{{ asset('storage/' . $user->image) }}" alt="image">
                     <div class="ps-3">
-                        <div class="text-base font-semibold">{{$user['name']}}</div>
-                        <div class="font-normal text-gray-500">{{$user['email']}}</div>
+                        <div class="text-base font-semibold">{{$user->name}}</div>
+                        <div class="font-normal text-gray-500">{{$user->email}}</div>
                     </div>
                 </th>
                 <td class="px-6 py-4">
@@ -51,13 +51,17 @@
                     </div>
                 </td>
                 <td class="px-6 py-4">
-                    <a href="{{route('update-user.update', ['id' => $user['id']])}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
+                    <a href="{{route('update-user.update', ['id' => $user->id])}}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
                 </td>
             </tr>
 
         @endforeach
 
         </tbody>
+
+            <div class="px-4">
+                {{$users->links()}}
+            </div>
     </table>
 
 @endsection

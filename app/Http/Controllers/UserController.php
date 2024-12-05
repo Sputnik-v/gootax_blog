@@ -43,7 +43,7 @@ class UserController extends Controller
 
     public function all()
     {
-        $users = User::all()->toArray();
+        $users = User::paginate(5);
 
         return view('admin.pages.all-users', compact('users'));
     }

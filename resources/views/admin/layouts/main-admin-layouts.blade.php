@@ -183,6 +183,11 @@
                                 <span>All Posts</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{route('all-comments.all')}}">
+                                <span>All Comments</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -214,7 +219,9 @@
                     <div class="flex items-center justify-between">
                         <div class="widget-label">
                             <h3>
-                                Users
+                                <a href="{{route('all-users.all')}}">
+                                    Users
+                                </a>
                             </h3>
                             <h1>
                                 {{$UserCount}}
@@ -229,7 +236,9 @@
                     <div class="flex items-center justify-between">
                         <div class="widget-label">
                             <h3>
-                                Posts
+                                <a href="{{route('all-posts.all')}}">
+                                    Posts
+                                </a>
                             </h3>
                             <h1>
                                 {{$PostCount}}
@@ -245,7 +254,9 @@
                     <div class="flex items-center justify-between">
                         <div class="widget-label">
                             <h3>
-                                Comments
+                                <a href="{{route('all-comments.all')}}">
+                                    Comments
+                                </a>
                             </h3>
                             <h1>
                                 {{$CommentCount}}
