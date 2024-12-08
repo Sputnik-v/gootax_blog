@@ -24,22 +24,21 @@
                         <li>
                             <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> History </a>
                         </li>
-
-                        <li>
-                            <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> Services </a>
-                        </li>
-
-                        <li>
-                            <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> Projects </a>
-                        </li>
-
-                        <li>
-                            <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> Blog </a>
-                        </li>
                     </ul>
                 </nav>
 
-                <div class="hidden md:relative md:block">
+                @guest()
+                    <div class="flex justify-center gap-2 text-sm text-blue-400">
+
+                            <a class="hover:text-blue-500" href="{{route('register')}}">Register</a>
+                            <a class="hover:text-blue-500" href="">Login</a>
+
+                    </div>
+                @endguest
+
+                    @auth()
+                        <div class="hidden md:relative md:block">
+                    @endauth
                     <button
                         type="button"
                         class="btn-header-menu overflow-hidden rounded-full border border-gray-300 shadow-inner"
