@@ -27,7 +27,7 @@
                 @yield('content')
             </div>
 
-                @if(!\Illuminate\Support\Facades\Route::is('register'))
+                @if(!\Illuminate\Support\Facades\Route::is('register') && !\Illuminate\Support\Facades\Route::is('login'))
                     <div class="rounded-lg bg-gray-200">
                         @include('components.sidebar')
                     </div>
@@ -38,7 +38,7 @@
     </div>
 
 
-    <div class="">
+    <div>
         @include('components.footer')
     </div>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -36,6 +37,8 @@ class UserController extends Controller
         $user = User::query()->create(array_merge($validated, ['image' => $pathAvatar], ['password' => $passwordHash]));
 
         session()->flash('message', $user['name'] . ', thanks! You Register!');
+
+        Auth::login($user);
 
         return redirect()->route('main' );
     }
