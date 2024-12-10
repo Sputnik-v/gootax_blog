@@ -2,13 +2,12 @@
 
 use App\Http\Controllers\Auth\loginController;
 use App\Http\Controllers\Auth\UserController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 require_once 'admin.php';
 
-Route::get('/', function () {
-    return view('pages.main');
-})->name('main');
+Route::get('/', [MainController::class, 'index'])->name('main');
 
 Route::middleware('guest')->group(function (){
 
