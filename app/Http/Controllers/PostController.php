@@ -91,4 +91,5 @@ class PostController extends Controller
         return redirect()->route('all-posts.all' );
 
     }
+
 }

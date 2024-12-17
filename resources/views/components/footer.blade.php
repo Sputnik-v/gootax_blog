@@ -1,11 +1,11 @@
-<footer class="bg-cyan-100">
+<footer class="bg-blue-300 h-16">
     <div class="container">
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div class="sm:flex sm:items-center sm:justify-between">
             <div class="flex justify-center text-teal-600 sm:justify-start">
-                <a class="block text-teal-600 w-[100px] drop-shadow-lg" href="#">
+                <a class="block text-teal-600 w-[100px] drop-shadow-lg mt-1" href="/">
                     <span class="sr-only">Home</span>
-                    <img src="{{asset('images/logo.svg')}}" alt="logo">
+                    <img class="rounded" src="{{asset('images/logo.jpg')}}" alt="logo">
                 </a>
             </div>
 

@@ -1,12 +1,12 @@
 
-<header class="bg-cyan-100">
+<header class="bg-blue-300">
     <div class="container">
-    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-screen-xl px-4 sm:px-6">
         <div class="flex h-16 items-center justify-between">
             <div class="flex-1 md:flex md:items-center md:gap-12">
-                <a class="block text-teal-600 w-[100px] drop-shadow-lg" href="#">
+                <a class="block text-teal-600 w-[100px] drop-shadow-lg" href="/">
                     <span class="sr-only">Home</span>
-                    <img src="{{asset('images/logo.svg')}}" alt="logo">
+                    <img class="rounded" src="{{asset('images/logo.jpg')}}" alt="logo">
                 </a>
             </div>
 
@@ -58,7 +58,7 @@
                 >
                     <div class="p-2">
                         <a
-                            href="#"
+                            href="{{route('account.showAccount')}}"
                             class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
                             role="menuitem"
                         >

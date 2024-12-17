@@ -8,14 +8,8 @@
 }
 
 body {
-    background: #e5e7ea;
-    height: 100vh;
+    background: #ece9e6;
     margin: 0;
-
-    display: grid;
-
-    /* задаём высоту строк */
-    grid-template-rows: auto 1fr auto;
 }
 
 .active-menu {

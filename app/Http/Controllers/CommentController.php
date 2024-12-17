@@ -23,4 +23,16 @@ class CommentController extends Controller
 
         return redirect()->route('all-comments.all');
     }
+
+    public function store(Request $request, $id)
+    {
+
+        $comment = Comment::create([
+           'comment' => $request->text,
+           'user_id' => $request->user()->id,
+           'post_id' => $id,
+        ]);
+
+        return redirect()->route('posts.show', ['id' => $id]);
+    }
 }

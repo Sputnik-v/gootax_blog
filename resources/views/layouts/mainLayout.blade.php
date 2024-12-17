@@ -23,11 +23,11 @@
 
     <div class="container py-2 px-2 flex justify-center">
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
-            <div class="h-32 rounded-lg bg-gray-200 lg:col-span-2">
+            <div class="rounded-lg bg-gray-200 lg:col-span-2">
                 @yield('content')
             </div>
 
-                @if(!\Illuminate\Support\Facades\Route::is('register') && !\Illuminate\Support\Facades\Route::is('login'))
+                @if(!\Illuminate\Support\Facades\Route::is('register') && !\Illuminate\Support\Facades\Route::is('login') && !\Illuminate\Support\Facades\Route::is('account.showAccount'))
                     <div class="rounded-lg bg-gray-200">
                         @include('components.sidebar')
                     </div>
@@ -38,7 +38,7 @@
     </div>
 
 
-    <div>
+    <div class="mt-5">
         @include('components.footer')
     </div>
 

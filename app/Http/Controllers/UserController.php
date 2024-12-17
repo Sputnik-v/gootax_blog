@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
@@ -82,6 +83,14 @@ class UserController extends Controller
         session()->flash('message', 'User ' . $user['name'] . ' update');
 
         return redirect()->route('all-users.all' );
+
+    }
+
+    public function showAccount()
+    {
+        $user = Auth::user();
+
+        return view('pages.account', compact('user'));
 
     }
 
