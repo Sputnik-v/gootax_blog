@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function (){
 
 Route::get('posts/{id}', [MainController::class, 'show'])->name('posts.show');
 Route::get('posts/categories/{category}', [MainController::class, 'showCategoryPosts'])->name('posts.show.category');
+Route::get('about', [MainController::class, 'showAbout'])->name('show.about');
 
 
 

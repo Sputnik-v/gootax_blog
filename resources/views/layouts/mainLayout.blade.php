@@ -27,7 +27,7 @@
                 @yield('content')
             </div>
 
-                @if(!\Illuminate\Support\Facades\Route::is('register') && !\Illuminate\Support\Facades\Route::is('login') && !\Illuminate\Support\Facades\Route::is('account.showAccount'))
+                @if(!\Illuminate\Support\Facades\Route::is('register') && !\Illuminate\Support\Facades\Route::is('login') && !\Illuminate\Support\Facades\Route::is('account.showAccount') && !\Illuminate\Support\Facades\Route::is('show.about'))
                     <div class="rounded-lg bg-gray-200">
                         @include('components.sidebar')
                     </div>

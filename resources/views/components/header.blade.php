@@ -14,7 +14,7 @@
                 <nav aria-label="Global" class="hidden md:block">
                     <ul class="flex items-center gap-6 text-sm">
                         <li>
-                            <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> About </a>
+                            <a class="text-gray-500 transition hover:text-gray-500/75" href="{{route('show.about')}}"> About </a>
                         </li>
 
                         <li>
@@ -28,7 +28,7 @@
                 </nav>
 
                 @guest()
-                    <div class="flex justify-center gap-2 text-sm text-blue-400">
+                    <div class="flex justify-center gap-2 text-sm text-blue-600">
 
                             <a class="hover:text-blue-500" href="{{route('register')}}">Register</a>
                             <a class="hover:text-blue-500" href="{{route('login')}}">Login</a>

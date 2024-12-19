@@ -69,4 +69,17 @@ class MainController extends Controller
 
     }
 
+    public function showAbout()
+    {
+        $user = null;
+        if (Auth::check()){
+
+            $user = Auth::user();
+
+        }
+
+
+        return view('pages.about', compact('user'));
+    }
+
 }
