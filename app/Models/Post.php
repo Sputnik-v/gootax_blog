@@ -15,6 +15,8 @@ class Post extends Model
         'description',
         'image',
         'views',
+        'like',
+        'not_like',
         'user_id',
         'category_id'
     ];

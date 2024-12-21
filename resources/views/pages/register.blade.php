@@ -1,7 +1,7 @@
 @extends('layouts.mainLayout')
 
 @section('content')
-    <div class="container mx-auto py-8">
+    <div class="container mx-auto py-24">
         <h1 class="text-2xl font-bold mb-6 text-center">Registration Form</h1>
         <form action="{{route('register.store')}}" method="POST" enctype="multipart/form-data" class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md">
             @csrf

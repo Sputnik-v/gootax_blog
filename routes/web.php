@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\loginController;
 use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,11 +29,16 @@ Route::middleware('auth')->group(function (){
 
     Route::post('comment/{id}', [\App\Http\Controllers\CommentController::class, 'store'])->name('comment.store');
 
+    Route::post('posts/{id}/like', [PostController::class, 'storeLike'])->name('storeLike');
+    Route::post('posts/{id}/not-like', [PostController::class, 'storeNotLike'])->name('storeNotLike');
+
 });
 
 Route::get('posts/{id}', [MainController::class, 'show'])->name('posts.show');
 Route::get('posts/categories/{category}', [MainController::class, 'showCategoryPosts'])->name('posts.show.category');
 Route::get('about', [MainController::class, 'showAbout'])->name('show.about');
+
+
 
 
 

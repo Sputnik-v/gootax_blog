@@ -1,7 +1,7 @@
 @extends('layouts.mainLayout')
 
 @section('content')
-    <div class="container w-[400px] mx-auto py-8">
+    <div class="container w-[400px] mx-auto py-8 py-[230px]">
         <h1 class="text-2xl font-bold mb-6 text-center">Login Form</h1>
         <form action="{{route('login.auth')}}" method="POST" enctype="multipart/form-data" class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md">
             @csrf
