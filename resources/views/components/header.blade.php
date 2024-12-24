@@ -1,4 +1,6 @@
 
+@php use Illuminate\Support\Facades\Auth; @endphp
+
 <header class="bg-blue-300">
     <div class="container">
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6">
@@ -69,6 +71,18 @@
                         >
                             My posts
                         </a>
+
+                        @if(Auth::user()->name == 'admin')
+
+                            <a
+                                href="{{route('admin.main')}}"
+                                class="block rounded-lg px-4 py-2 text-md text-gray-700 hover:bg-gray-50 hover:text-gray-700"
+                                role="menuitem"
+                            >
+                                Admin Panel
+                            </a>
+
+                        @endif
 
                     </div>
 

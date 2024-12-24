@@ -3,7 +3,7 @@
 @section('content')
 
 
-
+<div class="flex justify-center items-center h-[800px]">
     <div class="w-[500px] mt-5 pt-5 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
         <div class="flex flex-col items-center pb-10">
@@ -16,6 +16,8 @@
             </div>
         </div>
     </div>
+</div>
+
 
 
 @endsection

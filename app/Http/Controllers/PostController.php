@@ -95,6 +95,8 @@ class PostController extends Controller
     public function storeLike(Request $request, $id)
     {
 
+        $request->session()->put('like', $id);
+
         $post = Post::query()->find($id);
 
         $post->like = $post->like + 1;
@@ -103,8 +105,10 @@ class PostController extends Controller
         return redirect()->route('posts.show', ['id' => $post->id]);
     }
 
-    public function storeNotLike($id)
+    public function storeNotLike(Request $request, $id)
     {
+        $request->session()->put('not-like', $id);
+
 
         $post = Post::query()->find($id);
 
