@@ -94,4 +94,50 @@ class UserController extends Controller
 
     }
 
+    public function showPageUserUpdate()
+    {
+        $user = null;
+        if (Auth::check()){
+            $user = Auth::user();
+        }
+
+        return view('pages.update-user', compact('user'));
+    }
+
+    public function privateUserUpdate(Request $request)
+    {
+        $user = Auth::user();
+
+        $validated = $request->validate([
+            'name' => ['required', 'min:3', 'max:100'],
+            'email' => ['required', Rule::unique('users')->ignore($user->id), 'email'],
+            'image' => ['image', 'nullable', 'max:2999'],
+        ]);
+
+        $pathAvatar = null;
+
+        if( $request->hasFile('image')){
+            $pathDataBaseAvatar = User::query()->find($user->id)->toArray()['image'];
+            Storage::delete($pathDataBaseAvatar);
+
+            $pathAvatar = $request->file('image')->store('avatars');
+        }
+
+        $user->name = $validated['name'];
+        $user->email = $validated['email'];
+        if ($pathAvatar) $user->image = $pathAvatar;
+        $user->save();
+
+        session()->flash('message', 'You account, ' . $user['name'] . ', update');
+
+        return redirect()->route('account.update' );
+    }
+
+    public function deleteUser()
+    {
+        User::destroy(Auth::user()->id);
+        Auth::logout();
+        return redirect()->route('main');
+    }
+
 }

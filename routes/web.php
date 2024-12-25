@@ -32,6 +32,10 @@ Route::middleware('auth')->group(function (){
     Route::post('posts/{id}/like', [PostController::class, 'storeLike'])->name('storeLike');
     Route::post('posts/{id}/not-like', [PostController::class, 'storeNotLike'])->name('storeNotLike');
 
+    Route::get('account/update', [\App\Http\Controllers\UserController::class, 'showPageUserUpdate'])->name('account.update');
+    Route::post('account/update', [\App\Http\Controllers\UserController::class, 'privateUserUpdate'])->name('account.update.store');
+    Route::post('account/delete', [\App\Http\Controllers\UserController::class, 'deleteUser'])->name('account.delete');
+
 });
 
 Route::get('posts/{id}', [MainController::class, 'show'])->name('posts.show');

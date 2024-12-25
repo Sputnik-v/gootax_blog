@@ -7,7 +7,7 @@
 
     function disabled($id)
     {
-        if (session()->get('like') == $id || session()->get('not-like') == $id){
+        if (session()->get('like') == $id || session()->get('not-like') == $id || !\Illuminate\Support\Facades\Auth::check()){
             return 'disabled';
         }
         return false;
@@ -88,7 +88,7 @@
             <section class="bg-white dark:bg-gray-900 py-8 lg:py-16 antialiased">
                 <div class="max-w-2xl mx-auto px-4">
                     <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Discussion (20)</h2>
+                        <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Discussion ({{count($comments)}})</h2>
                     </div>
 
                     @auth()

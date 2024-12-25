@@ -21,7 +21,7 @@ class PostController extends Controller
     {
         $validated = $request->validate([
             'title' => ['required', 'min:5', 'max:100'],
-            'description' => ['required', 'min:5', 'max:300'],
+            'description' => ['required', 'min:5', 'max:3000'],
             'category_id' => ['required'],
             'image' => ['image', 'nullable', 'max:2999'],
         ]);
@@ -65,7 +65,7 @@ class PostController extends Controller
     {
         $validated = $request->validate([
             'title' => ['required', 'min:5', 'max:100'],
-            'description' => ['required', 'min:5', 'max:300'],
+            'description' => ['required', 'min:5', 'max:3000'],
             'image' => ['image', 'nullable', 'max:2999'],
         ]);
 

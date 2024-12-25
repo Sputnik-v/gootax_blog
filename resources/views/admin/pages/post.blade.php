@@ -38,7 +38,7 @@
                     <input hidden name="image" type="file" multiple @change="images = Array.from($event.target.files).map(file => ({url: URL.createObjectURL(file), name: file.name, preview: ['jpg', 'jpeg', 'png', 'gif'].includes(file.name.split('.').pop().toLowerCase()), size: file.size > 1024 ? file.size > 1048576 ? Math.round(file.size / 1048576) + 'mb' : Math.round(file.size / 1024) + 'kb' : file.size + 'b'}))" x-ref="fileInput">
 
                 </label>
-                <div class="count ml-auto text-gray-400 text-xs font-semibold">0/300</div>
+                <div class="count ml-auto text-gray-400 text-xs font-semibold">0/3000</div>
             </div>
 
             <!-- Preview image here -->
