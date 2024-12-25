@@ -1,7 +1,7 @@
 @php use Illuminate\Support\Facades\Storage; @endphp
 
 @extends('admin.layouts.main-admin-layouts')
-
+@section('breadcrumb', 'users')
 @section('content')
 
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 my-2">

@@ -1,5 +1,5 @@
 @extends('admin.layouts.main-admin-layouts')
-
+@section('breadcrumb', 'comments')
 @section('content')
 
         @if ($errors->any())
@@ -17,7 +17,6 @@
                 {{ session('message') }}
             </div>
         @endif
-
 
 
 
@@ -63,8 +62,6 @@
                 </table>
             </div>
 
-
-        </div>
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js" defer></script>
 

@@ -1,5 +1,5 @@
 @extends('admin.layouts.main-admin-layouts')
-
+@section('breadcrumb', 'user')
 @section('content')
 
     <div class="container mx-auto py-8">

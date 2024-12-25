@@ -1,12 +1,16 @@
 @php use Carbon\Carbon; @endphp
 @extends('layouts.mainLayout')
-
+@section('title', 'Main Page - all news')
 @section('content')
-    <div class="">
 
+    <div>
         @isset($category)
-            <h2 class="text-2xl font-bold text-blue-500 my-2 pb-2">#{{$category}}</h2>
+            <h2 class="text-xl font-bold text-blue-500">#{{$category}}</h2>
         @endisset
+
+        @if(\Illuminate\Support\Facades\Route::is('main'))
+            <h1 class="text-center font-bold text-blue-500">All News</h1>
+        @endif
 
         @foreach($posts as $post)
 

@@ -1,5 +1,5 @@
 @extends('layouts.mainLayout')
-
+@section('title', 'About Page - about our company')
 @section('content')
 
     <section class="bg-gray-100 w-[1200px] h-[800px]">

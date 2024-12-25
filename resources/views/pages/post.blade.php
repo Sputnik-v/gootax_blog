@@ -1,6 +1,8 @@
 @php use Carbon\Carbon; @endphp
 @extends('layouts.mainLayout')
-
+@section('title')
+    Post Page - {{$post->title}}
+@endsection
 @section('content')
 
     @php
@@ -15,6 +17,7 @@
 
     @endphp
 
+    <h1 class="text-center font-bold text-blue-500 mb-2">View Post</h1>
     <div class="flex flex-col">
         <div class="flex justify-between items-center bg-white px-6">
             <div class="flex items-center pt-5">

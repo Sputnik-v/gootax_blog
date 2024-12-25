@@ -1,8 +1,8 @@
 @extends('layouts.mainLayout')
-
+@section('title', 'Login Page - auth')
 @section('content')
-    <div class="container w-[400px] mx-auto py-8 py-[230px]">
-        <h1 class="text-2xl font-bold mb-6 text-center">Login Form</h1>
+    <div class="container lg:min-w-[1200px] md:min-w-[700px] min-w-[400px] h-[800px]">
+        <h1 class="text-2xl font-bold mb-6 text-center text-blue-500">Login Form</h1>
         <form action="{{route('login.auth')}}" method="POST" enctype="multipart/form-data" class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md">
             @csrf
 

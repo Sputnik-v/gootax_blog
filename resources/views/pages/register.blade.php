@@ -1,8 +1,8 @@
 @extends('layouts.mainLayout')
-
+@section('title', 'Register Page - enter your details')
 @section('content')
-    <div class="container mx-auto py-24">
-        <h1 class="text-2xl font-bold mb-6 text-center">Registration Form</h1>
+    <div class="container lg:min-w-[1200px] md:min-w-[700px] min-w-[400px] h-[800px]">
+        <h1 class="text-2xl text-blue-500 font-bold mb-6 text-center">Registration Form</h1>
         <form action="{{route('register.store')}}" method="POST" enctype="multipart/form-data" class="w-full max-w-sm mx-auto bg-white p-8 rounded-md shadow-md">
             @csrf
 

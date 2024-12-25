@@ -1,5 +1,5 @@
 @extends('admin.layouts.main-admin-layouts')
-
+@section('breadcrumb', 'post')
 @section('content')
     <form action="{{route('add-post.store')}}" method="POST" enctype="multipart/form-data">
 

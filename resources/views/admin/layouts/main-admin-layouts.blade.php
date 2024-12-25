@@ -71,33 +71,32 @@
                             <span class="icon"><i class="mdi mdi-account"></i></span>
                             <span>My Profile</span>
                         </a>
-                        <a class="navbar-item">
-                            <span class="icon"><i class="mdi mdi-settings"></i></span>
-                            <span>Settings</span>
-                        </a>
-                        <a class="navbar-item">
-                            <span class="icon"><i class="mdi mdi-email"></i></span>
-                            <span>Messages</span>
-                        </a>
                         <hr class="navbar-divider">
-                        <a class="navbar-item">
-                            <span class="icon"><i class="mdi mdi-logout"></i></span>
-                            <span>Log Out</span>
-                        </a>
+                        <form method="POST" action="{{route('logout.exit')}}">
+                            @csrf
+                            <button type="submit">
+                                <a class="navbar-item">
+                                    <span class="icon"><i class="mdi mdi-logout"></i></span>
+                                    <span>Log Out</span>
+                                </a>
+                            </button>
+                        </form>
                     </div>
                 </div>
-                <a href="https://justboil.me/tailwind-admin-templates/free-dashboard/" class="navbar-item has-divider desktop-icon-only">
-                    <span class="icon"><i class="mdi mdi-help-circle-outline"></i></span>
-                    <span>About</span>
-                </a>
-                <a href="https://github.com/justboil/admin-one-tailwind" class="navbar-item has-divider desktop-icon-only">
+                <a href="https://github.com/Sputnik-v" class="navbar-item has-divider desktop-icon-only">
                     <span class="icon"><i class="mdi mdi-github-circle"></i></span>
                     <span>GitHub</span>
                 </a>
-                <a title="Log out" class="navbar-item desktop-icon-only">
-                    <span class="icon"><i class="mdi mdi-logout"></i></span>
-                    <span>Log out</span>
-                </a>
+                <form method="POST" action="{{route('logout.exit')}}">
+                    @csrf
+                    <button type="submit">
+                        <a title="Log out" class="h-[55px] navbar-item desktop-icon-only">
+                            <span class="icon"><i class="mdi mdi-logout"></i></span>
+                            <span>Log out</span>
+                        </a>
+                    </button>
+                </form>
+
             </div>
         </div>
     </nav>
@@ -172,7 +171,7 @@
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <ul>
                 <li>Admin</li>
-                <li>Dashboard</li>
+                <li>@yield('breadcrumb', 'Dashboard')</li>
             </ul>
         </div>
     </section>
@@ -180,7 +179,7 @@
     <section class="is-hero-bar">
         <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
             <h1 class="title">
-                Dashboard
+                @yield('breadcrumb', 'Dashboard')
             </h1>
         </div>
     </section>

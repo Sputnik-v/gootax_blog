@@ -17,11 +17,11 @@
                     <ul class="flex items-center gap-6 text-sm">
 
                         <li>
-                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/"> Home </a>
+                            <a class="border-b-2 border-transparent hover:border-b-2 hover:border-b-gray-500/75 text-gray-500 transition hover:text-gray-500/75" href="/"> Home </a>
                         </li>
 
                         <li>
-                            <a class="text-gray-500 transition hover:text-gray-500/75" href="{{route('show.about')}}"> About </a>
+                            <a class="border-b-2 border-transparent hover:border-b-2 hover:border-b-gray-500/75 text-gray-500 transition hover:text-gray-500/75" href="{{route('show.about')}}"> About </a>
                         </li>
                     </ul>
                 </nav>
@@ -64,13 +64,6 @@
                             My profile
                         </a>
 
-                        <a
-                            href="#"
-                            class="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                            role="menuitem"
-                        >
-                            My posts
-                        </a>
 
                         @if(Auth::user()->name == 'admin')
 

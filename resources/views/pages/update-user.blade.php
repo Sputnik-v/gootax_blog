@@ -1,12 +1,14 @@
 @extends('layouts.mainLayout')
-
+@section('title')
+    Update Page - {{$user['name']}}
+@endsection
 @section('content')
 
     <div class="lg:min-w-[1200px] md:min-w-[700px] min-w-[400px] h-[800px] bg-white">
     <form action="{{route('account.update.store')}}" method="POST" enctype="multipart/form-data">
 
         @csrf
-        <div class="heading text-center font-bold text-2xl m-5 text-gray-800 bg-white">You Account Update</div>
+        <div class="heading text-center font-bold text-2xl pt-2 m-5 text-blue-500 bg-white">You Account Update</div>
 
         @if ($errors->any())
             <div class="bg-red-200 rounded text-center py-2 mx-auto max-w-2xl">
