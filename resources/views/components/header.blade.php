@@ -27,7 +27,7 @@
                 </nav>
 
                 @guest()
-                    <div class="flex justify-center gap-2 text-sm text-blue-600">
+                    <div class="hidden md:flex justify-center gap-2 text-sm text-blue-600">
 
                             <a class="hover:text-blue-500" href="{{route('register')}}">Register</a>
                             <a class="hover:text-blue-500" href="{{route('login')}}">Login</a>
@@ -112,7 +112,7 @@
             </div>
                 @endauth
 
-                <div class="block md:hidden">
+                <div id="burger" class="block md:hidden">
                     <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -130,5 +130,54 @@
         </div>
     </div>
     </div>
+
+    <nav id="nav" class="close-menu absolute top-0 w-full h-screen z-10 bg-blue-300">
+
+            <button id="close-menu-block" class="absolute right-4 top-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+
+            </button>
+            <div class="flex flex-col justify-center items-center gap-2 text-sm text-blue-600 mt-[100px] gap-6">
+
+                <a class="hover:text-gray-300 text-white text-2xl" href="{{route('register')}}">Register</a>
+                <a class="hover:text-gray-300 text-white text-2xl" href="{{route('login')}}">Login</a>
+
+                <a class="block text-teal-600 w-[100px] drop-shadow-lg mt-[100px]" href="/">
+                    <span class="sr-only">Home</span>
+                    <img class="rounded" src="{{asset('images/logo.jpg')}}" alt="logo">
+                </a>
+
+            </div>
+    </nav>
+
 </header>
+
+<script>
+
+    const nav = document.querySelector('#nav');
+    const burger = document.querySelector('#burger');
+    const closeButton = document.querySelector('#close-menu-block');
+
+    function openBlockOrCloseBlock(burger, block){
+        const addEvent = burger.addEventListener('click', (e) => {
+
+            if(block.classList.contains('close-menu')){
+                block.classList.add('open-menu');
+                block.classList.remove('close-menu');
+            } else {
+                block.classList.add('close-menu')
+                block.classList.remove('open-menu');
+            }
+
+
+        })
+    }
+
+
+    openBlockOrCloseBlock(burger, nav);
+    openBlockOrCloseBlock(closeButton, nav);
+
+</script>
 

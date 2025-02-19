@@ -4,7 +4,7 @@
 @section('breadcrumb', 'posts')
 @section('content')
 
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 my-2">
+    <table class="table-fixed w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 my-2">
 
 
         @if (session()->has('message'))
@@ -34,7 +34,7 @@
         @foreach($posts as $post)
 
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white overflow-hidden">
                     <img class="w-10 h-10" src="{{ asset('storage/' . $post->image) }}" alt="image">
                     <div class="ps-3">
                         <div class="text-base font-semibold">{{$post->title}}</div>

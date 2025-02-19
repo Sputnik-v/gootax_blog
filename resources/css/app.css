@@ -15,3 +15,13 @@ body {
 .active-menu {
     display: block;
 }
+
+.open-menu {
+    left: 0;
+    transition: .3s ease;
+}
+
+.close-menu {
+    left: -500px;
+    transition: .3s ease;
+}
