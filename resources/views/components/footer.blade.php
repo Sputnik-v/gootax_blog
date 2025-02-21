@@ -1,11 +1,11 @@
-<footer class="bg-blue-300 h-16">
+<footer class="bg-gradient-to-r from-cyan-200 to-cyan-400 h-16">
     <div class="container">
-    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <div class="flex justify-center text-teal-600 sm:justify-start">
-                <a class="block text-teal-600 w-[100px] drop-shadow-lg mt-1" href="/">
+    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 h-16">
+        <div class="flex items-center justify-between h-[60px]">
+            <div class="flex justify-center text-teal-600 sm:justify-start h-16">
+                <a class="block text-teal-600 drop-shadow-lg" href="/">
                     <span class="sr-only">Home</span>
-                    <img class="rounded" src="{{asset('images/logo.jpg')}}" alt="logo">
+                    <img class="rounded w-[80px]" src="{{asset('images/logo.png')}}" alt="logo">
                 </a>
             </div>
 

@@ -22,6 +22,10 @@ body {
 }
 
 .close-menu {
-    left: -500px;
+    left: -100vw;
     transition: .3s ease;
+}
+
+.scroll-no {
+    overflow: hidden;
 }

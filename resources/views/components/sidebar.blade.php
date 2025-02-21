@@ -1,5 +1,5 @@
 <div class="flex flex-col justify-center">
-    <h2 class="text-center font-bold text-blue-500">Most Viewed Posts</h2>
+    <h2 class="text-center font-bold text-blue-500 text-xl md:text-lg">Most Viewed Posts</h2>
 
     @foreach($mostViewedPosts as $post)
 

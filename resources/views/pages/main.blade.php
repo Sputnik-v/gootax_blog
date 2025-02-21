@@ -9,7 +9,7 @@
         @endisset
 
         @if(\Illuminate\Support\Facades\Route::is('main'))
-            <h1 class="text-center font-bold text-blue-500">All News</h1>
+            <h1 class="text-center font-bold text-blue-500 text-xl md:text-lg">All News</h1>
         @endif
 
         @foreach($posts as $post)

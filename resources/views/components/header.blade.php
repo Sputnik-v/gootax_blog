@@ -1,14 +1,14 @@
 
 @php use Illuminate\Support\Facades\Auth; @endphp
 
-<header class="bg-blue-300">
+<header class="bg-gradient-to-r from-cyan-200 to-cyan-400">
     <div class="container">
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6">
         <div class="flex h-16 items-center justify-between">
             <div class="flex-1 md:flex md:items-center md:gap-12">
                 <a class="block text-teal-600 w-[100px] drop-shadow-lg" href="/">
                     <span class="sr-only">Home</span>
-                    <img class="rounded" src="{{asset('images/logo.jpg')}}" alt="logo">
+                    <img class="rounded w-[80px]" src="{{asset('images/logo.png')}}" alt="logo">
                 </a>
             </div>
 
@@ -131,7 +131,7 @@
     </div>
     </div>
 
-    <nav id="nav" class="close-menu absolute top-0 w-full h-screen z-10 bg-blue-300">
+    <nav id="nav" class="close-menu absolute top-0 w-full h-screen z-10 bg-gradient-to-r from-blue-300 to-indigo-600">
 
             <button id="close-menu-block" class="absolute right-4 top-4">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
@@ -146,7 +146,7 @@
 
                 <a class="block text-teal-600 w-[100px] drop-shadow-lg mt-[100px]" href="/">
                     <span class="sr-only">Home</span>
-                    <img class="rounded" src="{{asset('images/logo.jpg')}}" alt="logo">
+                    <img class="rounded" src="{{asset('images/logo.png')}}" alt="logo">
                 </a>
 
             </div>
@@ -159,16 +159,26 @@
     const nav = document.querySelector('#nav');
     const burger = document.querySelector('#burger');
     const closeButton = document.querySelector('#close-menu-block');
+    const body = document.body;
+
+
 
     function openBlockOrCloseBlock(burger, block){
         const addEvent = burger.addEventListener('click', (e) => {
 
+            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
             if(block.classList.contains('close-menu')){
                 block.classList.add('open-menu');
                 block.classList.remove('close-menu');
+                body.style.paddingRight = scrollbarWidth + 'px';
+                body.style.overflow = 'hidden';
             } else {
                 block.classList.add('close-menu')
                 block.classList.remove('open-menu');
+                body.classList.remove('scroll-no');
+                body.style.paddingRight = '0px';
+                body.style.overflow = 'auto';
             }
 
 
