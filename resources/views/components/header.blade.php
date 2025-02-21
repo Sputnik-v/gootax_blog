@@ -175,7 +175,7 @@
                     <img
                         src="{{ asset('storage/' . $user->image) }}"
                         alt=""
-                        class="w-[100px] object-cover rounded-full flex justify-center"
+                        class="w-[100px] h-[100px] object-cover rounded-full flex justify-center"
                     />
                 </div>
 

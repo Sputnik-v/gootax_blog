@@ -28,7 +28,7 @@
                     <div class="mt-4 flex justify-between items-center">
                         <div class="flex items-center">
                             <div class="flex items-center">
-                                <img class="object-cover h-10 rounded-full" src="{{ asset('storage/' . $post->user->image) }}"
+                                <img class="object-cover h-10 w-10 rounded-full" src="{{ asset('storage/' . $post->user->image) }}"
                                      alt="Avatar">
                                 <a href="#" class="mx-2 font-semibold text-gray-700 dark:text-gray-200" tabindex="0"
                                    role="link">{{$post->user->name}}</a>
